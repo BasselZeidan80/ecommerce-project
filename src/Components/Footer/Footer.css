@@ -1,0 +1,35 @@
+.footer {
+    padding: 20px;
+    background-color: #F0F3F2;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cstImagePay {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.paymentImage {
+
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.paymentArea {
+    justify-content: space-between;
+}
+
+.socialLinks i {
+    /* background-color: red; */
+    /* padding: 5px; */
+    margin: 0 5px;
+    font-size: 22px;
+}
