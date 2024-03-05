@@ -41,12 +41,13 @@ export default function CategorySlider() {
     // slidesToScroll: 1,
     dots: false,
     infinite: true,
-    slidesToShow: 7,
+    slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
     speed: 1000,
     autoplaySpeed: 2000,
     cssEase: "linear",
+  
   };
 
   return (

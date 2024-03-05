@@ -82,7 +82,7 @@ export default function Payment() {
         shippingAddress,
         {
           headers: { token: localStorage.getItem("token") },
-          params: { url: window.location.origin+'#'},
+          params: { url: "https://BasselZeidan80.github.io/ecommerce-project"},
         }
       )
       .then((res) => {

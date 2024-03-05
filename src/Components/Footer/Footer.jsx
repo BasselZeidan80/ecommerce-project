@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="container  ">
           <h3>Get The FreshCart app</h3>
           <p>
-            we will send you a link , open it your phone to download the app{" "}
+            We Will Send You a Link , Open It Your Phone To Download The App
           </p>
 
           <div className="inparea w-75 mx-auto d-flex justify-content-center  ">
@@ -17,7 +17,7 @@ export default function Footer() {
               placeholder="Email.."
               className="form-control"
             />
-            <button className="btn btn-success w-25 ">Share App Link</button>
+            <button className="btn w-25 btn-success text-center ">Share App Link</button>
           </div>
           <hr />
 

@@ -6,10 +6,12 @@ import { Outlet } from "react-router-dom";
 export default function Layout() {
   return (
     <>
+    <div className="app">
       <Navbar />
 
       <Outlet />
       <Footer />
+      </div>
     </>
   );
 }

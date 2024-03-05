@@ -19,6 +19,8 @@ import AllOrders from "./Components/AllOrders/AllOrders";
 import { ToastContainer, toast } from "react-toastify";
 import { useEffect } from "react";
 import Favorites from "./Components/Favorites/Favorites";
+import bgcImage from "./images/bgImage.jpg"
+import ResetPage from "./Components/Login/ResetPage";
 
 function App() {
   const myQuery = new QueryClient();
@@ -52,6 +54,7 @@ function App() {
           ),
         },
         { path: "Login", element: <Login /> },
+        { path: "ResetPage", element: <ResetPage/> },
         { path: "SignUp", element: <SignUp /> },
         { path: "Brand", element: <Brand /> },
         {
@@ -102,7 +105,7 @@ function App() {
 
   
   return (
-    <div className="App">
+    <div className="App ">
       <QueryClientProvider client={myQuery}>
         <AuthContextPProvider>
           <CartContextProvider>

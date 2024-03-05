@@ -2,7 +2,7 @@ import axios from "axios";
 import { useFormik } from "formik";
 import React, { useContext, useState } from "react";
 import { InfinitySpin, RotatingLines } from "react-loader-spinner";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import * as Yup from 'yup'
 import { AuthContextProvider } from "../../Context/AuthContext";
 
@@ -129,6 +129,9 @@ function Validation(values){
     
   })
 
+
+
+
   return (
     <>
       <div className="container">
@@ -148,6 +151,10 @@ function Validation(values){
           <input onBlur={myFormik.handleBlur} onChange={myFormik.handleChange} value={myFormik.values.password} type="password" className="form-control mb-3" id="password" />
           {myFormik.errors.password && myFormik.touched.password ?  <div className="alert alert-danger">{myFormik.errors.password}</div> : ''}
 
+
+        <div className="d-flex align-items-center justify-content-between">
+
+          <Link className="mb-3 text-success" to = {'/ResetPage'}>Forget Password! </Link>
           <button type="submit" className="btn btn-success text-center  mb-3">
             
 
@@ -168,6 +175,8 @@ function Validation(values){
             
             
             </button>
+            </div>
+
         </form>
       </div>
     </>
