@@ -18,9 +18,24 @@ export default function Products() {
 
    const {addProductToCart , addFavoriteToWichlist} =  useContext(CartContext)
 
+
+  //  const [favStatus, setFavStatus] = useState({});
+
+   const [favoriteStatus, setFavoriteStatus] = useState(() => {
+    const storedStatus = JSON.parse(localStorage.getItem('favoriteStatus')) || {};
+    return storedStatus;
+  });
+
+  useEffect(() => {
+    localStorage.setItem('favoriteStatus', JSON.stringify(favoriteStatus));
+  }, [favoriteStatus]);
+
+
+
   async function addProduct(id){
    const res= await addProductToCart(id)
-   if(res=== data.data.message){
+   if(res === data.data.message){
+
     console.log("product add successful");
     toast.success('Product Added To Cart Successfully !');
 
@@ -76,6 +91,18 @@ if(isLoading){
 }
 
 
+
+
+const toggleFavorite = (productId) => {
+  setFavoriteStatus((prevStatus) => ({
+    ...prevStatus,
+    [productId]: !prevStatus[productId],
+  }));
+
+  // Call your addFavorite function here if needed
+  addFavorite(productId);
+};
+
   return (
     <>
 
@@ -116,7 +143,9 @@ if(isLoading){
           </Link>
 
           <div className="HeartIcon">
-        <button onClick={()=> addFavorite(product.id)} className="btn btn-outline-danger">
+        <button onClick={()=> toggleFavorite(product.id)} className={`btn${favoriteStatus[product.id] ? ' btn-danger' : ' btn-outline-danger'}`}
+
+        >
           <i class="fa-solid fa-heart"></i>
           </button >
           </div>
@@ -148,7 +177,7 @@ if(isLoading){
 
 
 <ToastContainer
-        position="top-right"
+        position="top-left"
         theme="light"
         style={{ width: '400px' }}
       />
